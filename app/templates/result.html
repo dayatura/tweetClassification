@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Twitter Classification</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ url_for('static',filename='w3.css') }}">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <style>
+	body,h1 {font-family: "Raleway", sans-serif}
+	body, html {height: 100%}
+	.bgimg {
+  	  background-image: url("{{ url_for('static',filename='forestbridge.jpg') }}");
+  	  min-height: 100%;
+  	  background-position: center;
+  	  background-size: cover;
+	}
+</style>
+</head>
+
+<body>
+  <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+	  <div class="w3-display-middle">
+		<h1 class="w3-jumbo w3-animate-top">Twitter Classification</h1>
+
+		<form action="" method="post">
+			<textarea rows="2" cols="120" name="tweet" id="tweet" placeholder="Tweet here..." size="120" ></textarea><br>
+		<input type="submit" class="submitButton" value="Submit">
+		</form>
+        <br>
+        Tweet: 
+        <br>{{result['tweet']}}
+        <h4>ANN &emsp;&emsp;&emsp;&emsp;&emsp;: {{result['ann']}}</h4>
+        <h4>Random Forest   : {{result['rf']}}</h4>
+        <h4>SVM &emsp;&emsp;&emsp;&emsp;&emsp;: {{result['svm']}}</h4>
+
+	  </div>
+  </div>
+
+</body>
+</html>
